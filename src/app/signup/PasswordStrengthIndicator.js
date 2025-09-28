@@ -1,11 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function PasswordStrengthIndicator({ password }) {
   const [score, setScore] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!password) {
@@ -13,64 +11,36 @@ export default function PasswordStrengthIndicator({ password }) {
       return;
     }
 
-    setIsLoading(true);
+    let newScore = 0;
+    if (password.length >= 8) newScore = 1;
+    if (password.length >= 12 && /[A-Z]/.test(password)) newScore = 2;
+    if (password.length >= 16 && /[0-9]/.test(password)) newScore = 3;
+    if (password.length >= 20 && /[!@#$%^&*]/.test(password)) newScore = 4;
 
-    // Import zxcvbn dynamically only when needed
-    import("zxcvbn")
-      .then((module) => {
-        const result = module.default(password);
-        setScore(result.score);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        setIsLoading(false);
-      });
+    setScore(newScore);
   }, [password]);
 
-  if (!password || isLoading) {
-    return <div className="h-1 mt-2 bg-slate-200 rounded" />;
-  }
-
   const strengthLabels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
-  const strengthColors = [
-    "bg-red-500", // Very Weak
-    "bg-purple-300", // Weak
-    "bg-purple-400", // Fair
-    "bg-indigo-400", // Good
-    "bg-indigo-600", // Strong
-  ];
+  const strengthPercentages = [20, 40, 60, 80, 100];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 5 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="mt-2"
-    >
+    <div className="mt-2" aria-label={`Password strength: ${strengthLabels[score]}`}>
       <div className="flex items-center gap-2">
-        <div className="w-full h-1 bg-slate-200 rounded overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${(score + 1) * 20}%` }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`h-1 rounded ${strengthColors[score]}`}
+        <div className="w-full h-1 bg-gray-200 rounded-md overflow-hidden">
+          <div
+            className="h-1 bg-[#00BFFF] rounded-md"
+            style={{ width: `${strengthPercentages[score]}%` }}
           />
         </div>
-        <span className="text-xs sm:text-sm text-slate-600 min-w-[70px]">
+        <span className="text-xs sm:text-sm text-gray-600 min-w-[70px]">
           {strengthLabels[score]}
         </span>
       </div>
-
       {score < 2 && (
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="mt-1 text-xs sm:text-sm text-slate-500"
-        >
+        <p className="mt-1 text-xs text-gray-600">
           Tip: Use a mix of letters, numbers, and symbols
-        </motion.p>
+        </p>
       )}
-    </motion.div>
+    </div>
   );
 }

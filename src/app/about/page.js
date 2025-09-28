@@ -1,64 +1,51 @@
-// app/about/page.js or components/AboutPage.js
-"use client";
+'use client';
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Shield, Users, Lightbulb, ChevronRight, Quote, MapPin } from "lucide-react";
 import illustration from './personnes-code-qr_118813-5817 (1).avif';
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 text-sm md:text-base overflow-x-hidden">
-      {/* Floating Gradient Orbs */}
-      <div className="fixed -top-16 -left-16 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 opacity-10 blur-2xl animate-float-slow z-0" />
-      <div className="fixed bottom-4 right-4 w-40 h-40 sm:w-64 sm:h-64 rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 opacity-10 blur-2xl animate-float-medium z-0" />
-      <div className="fixed top-1/4 left-1/5 w-24 h-24 sm:w-36 sm:h-36 rounded-full bg-gradient-to-r from-indigo-200 to-purple-200 opacity-10 blur-2xl animate-float-fast z-0" />
-
+    <div className="flex flex-col min-h-screen bg-gray-50 text-xs">
       <main className="flex-grow">
-        <div className=" mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Hero Section */}
-          <section className="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white rounded-xl overflow-hidden mb-16 sm:mb-20 lg:mb-24">
-            <div className="absolute inset-0 bg-black/20 z-0"></div>
-            <div className="relative z-10 text-center py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="inline-flex items-center rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-300 ring-1 ring-inset ring-indigo-500/30 mb-6">
-                  <Shield className="w-4 h-4 mr-2" /> Building Trust Worldwide
-                </div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                  About Lost & Found Portal
-                </h1>
-                <p className="text-sm md:text-base text-indigo-100 max-w-3xl mx-auto leading-7 font-light">
-                  We are a community-driven platform dedicated to reuniting lost items with their owners using innovative QR sticker technology and secure, anonymous communication.
-                </p>
-              </motion.div>
+          <section className="bg-sky-600 text-white border-b border-gray-200 rounded-md mb-12">
+            <div className="text-center py-12 sm:py-16 px-4 sm:px-6">
+              <div className="inline-flex items-center rounded-full bg-[#00BFFF]/10 px-3 py-1 text-xs font-medium text-[#00BFFF] border border-[#00BFFF]/30 mb-4">
+                <Shield className="w-4 h-4 mr-2" aria-hidden="true" />
+                Building Trust Worldwide
+              </div>
+              <h1 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+                About Lost & Found Portal
+              </h1>
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
+                We are a community-driven platform dedicated to reuniting lost items with their owners using innovative QR sticker technology and secure, anonymous communication.
+              </p>
             </div>
           </section>
 
           {/* Mission Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <section className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+                <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                   Our Mission
                 </h2>
-                <p className="text-sm md:text-base text-slate-600 leading-7 mb-4">
+                <p className="text-xs sm:text-sm text-gray-600 mb-4">
                   Our mission is to simplify the recovery of lost belongings by fostering a global community of responsible individuals. We leverage advanced QR sticker technology to ensure secure, private, and efficient reunions.
                 </p>
-                <p className="text-sm md:text-base text-slate-600 leading-7">
+                <p className="text-xs sm:text-sm text-gray-600">
                   Every lost item has a story. Our platform empowers users to tag their valuables with QR stickers, report lost or found items, and connect anonymously to reunite items with their owners.
                 </p>
               </div>
-              <div className="relative w-full h-64 sm:h-80 md:h-96">
+              <div className="relative w-full h-48 sm:h-64 md:h-80">
                 <Image
                   src={illustration}
                   alt="Illustration of QR sticker technology in action"
                   fill
-                  className="object-cover rounded-xl shadow-lg"
+                  className="object-cover rounded-md"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
@@ -67,181 +54,157 @@ export default function AboutPage() {
           </section>
 
           {/* Values Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-24 bg-white rounded-xl border border-slate-200 py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+          <section className="mb-12 bg-white rounded-md border border-gray-200 py-12">
+            <div className="text-center mb-8">
+              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                 Our Core Values
               </h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-7">
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
                 Guided by principles that ensure trust, efficiency, and community impact through QR technology.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <ValueCard
                 title="Trust & Security"
                 description="Your privacy is our priority with end-to-end encryption and anonymous QR sticker communication."
-                icon={<Shield className="w-6 h-6 text-indigo-600" />}
-                delay={0.1}
+                icon={<Shield className="w-5 h-5 text-[#00BFFF]" aria-hidden="true" />}
               />
               <ValueCard
                 title="Community Impact"
                 description="We build a global network of individuals dedicated to helping others recover their belongings using QR stickers."
-                icon={<Users className="w-6 h-6 text-indigo-600" />}
-                delay={0.2}
+                icon={<Users className="w-5 h-5 text-[#00BFFF]" aria-hidden="true" />}
               />
               <ValueCard
                 title="Innovation"
                 description="Our QR sticker technology and intelligent matching system streamline item recovery."
-                icon={<Lightbulb className="w-6 h-6 text-indigo-600" />}
-                delay={0.3}
+                icon={<Lightbulb className="w-5 h-5 text-[#00BFFF]" aria-hidden="true" />}
               />
             </div>
           </section>
 
           {/* Team Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-24">
-            <div className="text-center mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+          <section className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                 Meet Our Team
               </h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-7">
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
                 Our passionate team is committed to making a difference in your recovery journey with QR technology.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <TeamCard
                 name="Ananya Sharma"
                 role="Founder & CEO"
                 image="/team/ananya.jpg"
                 description="Ananya leads with a vision to make item recovery seamless and secure using QR stickers."
-                delay={0.1}
               />
               <TeamCard
                 name="Vikram Patel"
                 role="CTO"
                 image="/team/vikram.jpg"
                 description="Vikram drives our innovative QR sticker technology and platform development."
-                delay={0.2}
               />
               <TeamCard
                 name="Priya Menon"
                 role="Head of Community"
                 image="/team/priya.jpg"
                 description="Priya builds our global network of responsible finders using QR technology."
-                delay={0.3}
               />
               <TeamCard
                 name="Rahul Desai"
                 role="Lead Designer"
                 image="/team/rahul.jpg"
                 description="Rahul crafts intuitive and beautiful user experiences for our QR platform."
-                delay={0.4}
               />
             </div>
           </section>
 
           {/* Success Stories Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-24 bg-slate-50 rounded-xl border border-slate-200 py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+          <section className="mb-12 bg-white rounded-md border border-gray-200 py-12">
+            <div className="text-center mb-8">
+              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                 Success Stories with QR Stickers
               </h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-7">
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
                 Hear from users who recovered their items using our QR sticker technology.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <TestimonialCard
                 quote="I lost my laptop bag at the airport, but the QR sticker helped the finder contact me within hours. Amazing system!"
                 name="Anjali Sharma"
                 location="Delhi"
-                delay={0.1}
               />
               <TestimonialCard
                 quote="Found a wallet with a QR sticker and used the platform to return it anonymously. It felt great to help someone!"
                 name="Vikram Singh"
                 location="Mumbai"
-                delay={0.2}
               />
               <TestimonialCard
                 quote="My lost keys were scanned via the QR sticker, and I got them back the same day. This technology is a game-changer!"
                 name="Priya Patel"
                 location="Bangalore"
-                delay={0.3}
               />
             </div>
           </section>
 
           {/* FAQ Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-24">
-            <div className="text-center mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+          <section className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-7">
+              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
                 Get answers to common questions about our QR sticker technology and lost item recovery.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FAQItem
                 question="How do QR stickers help recover lost items?"
                 answer="QR stickers have unique codes linked to your account. When scanned, they allow finders to report items directly to our platform, connecting them with you anonymously."
-                delay={0.1}
               />
               <FAQItem
                 question="How do I get QR stickers?"
                 answer="Sign up for an account, and order our durable, waterproof QR stickers through your dashboard."
-                delay={0.2}
               />
               <FAQItem
                 question="What if I find an item with a QR sticker?"
                 answer="Scan the QR code with your smartphone or enter the code in our search tool to report the item and connect with the owner securely."
-                delay={0.3}
               />
               <FAQItem
                 question="Are QR stickers durable?"
                 answer="Yes, our QR stickers are waterproof, UV-resistant, and designed to withstand wear and tear, ensuring they remain scannable for years."
-                delay={0.4}
               />
             </div>
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-indigo-700 to-purple-700 text-white rounded-xl shadow-lg">
-            <div className="text-center px-6 sm:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6">
-                  Join Our Community
-                </h2>
-                <p className="text-sm md:text-base mb-8 max-w-3xl mx-auto text-indigo-100 leading-7 font-light">
-                  Be part of a movement to reunite lost items with their owners. Sign up today to protect your valuables with QR stickers.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      href="/signup"
-                      aria-label="Get started with our platform for free"
-                      className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 shadow-md hover:shadow-lg"
-                    >
-                      Get Started Free
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      href="/contact"
-                      aria-label="Contact our sales team"
-                      className="inline-flex items-center px-6 py-3 bg-transparent border border-white text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-indigo-600 transition-all duration-300"
-                    >
-                      Contact Sales
-                    </Link>
-                  </motion.div>
-                </div>
-              </motion.div>
+          <section className="py-12 bg-sky-600 text-white rounded-md border border-gray-200">
+            <div className="text-center px-4 sm:px-6">
+              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+                Join Our Community
+              </h2>
+              <p className="text-xs sm:text-sm text-gray-600 mb-6 max-w-3xl mx-auto">
+                Be part of a movement to reunite lost items with their owners. Sign up today to protect your valuables with QR stickers.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
+                <Link
+                  href="/signup"
+                  aria-label="Get started with our platform for free"
+                  className="inline-flex items-center px-4 py-2 bg-white border border-[#00BFFF] text-[#00BFFF] rounded-md font-medium text-xs sm:text-sm hover:bg-[#00BFFF] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#00BFFF]"
+                >
+                  Get Started Free
+                  <ChevronRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/contact"
+                  aria-label="Contact our sales team"
+                  className="inline-flex items-center px-4 py-2 bg-white border border-[#00BFFF] text-[#00BFFF] rounded-md font-medium text-xs sm:text-sm hover:bg-[#00BFFF] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#00BFFF]"
+                >
+                  Contact Sales
+                </Link>
+              </div>
             </div>
           </section>
         </div>
@@ -251,97 +214,63 @@ export default function AboutPage() {
 }
 
 // Component: Value Card
-function ValueCard({ title, description, icon, delay }) {
+function ValueCard({ title, description, icon }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -4 }}
-      className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300"
-    >
-      <motion.div
-        initial={{ scale: 0.8 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 0.5, delay: delay + 0.1 }}
-        viewport={{ once: true }}
-        className="mb-6 w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center"
-      >
+    <div className="bg-white p-6 rounded-md border border-gray-200">
+      <div className="mb-4 w-10 h-10 bg-[#00BFFF]/10 rounded-md flex items-center justify-center">
         {icon}
-      </motion.div>
-      <h3 className="text-base font-semibold text-slate-900 mb-4">{title}</h3>
-      <p className="text-sm text-slate-600 leading-7">{description}</p>
-    </motion.div>
+      </div>
+      <h3 className="text-[14px] font-medium text-gray-800 mb-3">{title}</h3>
+      <p className="text-xs text-gray-600">{description}</p>
+    </div>
   );
 }
 
 // Component: Team Card
-function TeamCard({ name, role, image, description, delay }) {
+function TeamCard({ name, role, image, description }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -4 }}
-      className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 text-center"
-    >
-      <div className="relative w-32 h-32 mx-auto mb-6">
+    <div className="bg-white p-6 rounded-md border border-gray-200 text-center">
+      <div className="relative w-24 h-24 mx-auto mb-4">
         <Image
           src={image}
           alt={`Portrait of ${name}, ${role}`}
           fill
           className="object-cover rounded-full"
-          sizes="(max-width: 640px) 128px, 128px"
+          sizes="(max-width: 640px) 96px, 96px"
         />
       </div>
-      <h3 className="text-base font-semibold text-slate-900 mb-1">{role}</h3>
-      <p className="text-sm text-indigo-600 mb-3">{name}</p>
-      <p className="text-sm text-slate-600 leading-7">{description}</p>
-    </motion.div>
+      <h3 className="text-[14px] font-medium text-gray-800 mb-1">{role}</h3>
+      <p className="text-xs text-[#00BFFF] mb-3">{name}</p>
+      <p className="text-xs text-gray-600">{description}</p>
+    </div>
   );
 }
 
 // Component: Testimonial Card
-function TestimonialCard({ quote, name, location, delay }) {
+function TestimonialCard({ quote, name, location }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -4 }}
-      className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300"
-    >
-      <div className="mb-6 text-indigo-600">
-        <Quote className="w-6 h-6" />
+    <div className="bg-white p-6 rounded-md border border-gray-200">
+      <div className="mb-4 text-[#00BFFF]">
+        <Quote className="w-5 h-5" aria-hidden="true" />
       </div>
-      <p className="text-sm text-slate-600 leading-7 mb-4">{quote}</p>
-      <div className="text-base font-medium text-slate-900">{name}</div>
-      <div className="text-sm text-slate-600">{location}</div>
-    </motion.div>
+      <p className="text-xs text-gray-600 mb-4">{quote}</p>
+      <div className="text-[14px] font-medium text-gray-800">{name}</div>
+      <div className="text-xs text-gray-600">{location}</div>
+    </div>
   );
 }
 
 // Component: FAQ Item
-function FAQItem({ question, answer, delay }) {
+function FAQItem({ question, answer }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -4 }}
-      className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300"
-    >
+    <div className="bg-white p-6 rounded-md border border-gray-200">
       <div className="flex items-start">
-        <MapPin className="w-6 h-6 text-indigo-600 mr-4 flex-shrink-0" />
+        <MapPin className="w-5 h-5 text-[#00BFFF] mr-3 flex-shrink-0" aria-hidden="true" />
         <div>
-          <h3 className="text-base font-medium text-slate-900 mb-3">{question}</h3>
-          <p className="text-sm text-slate-600 leading-7">{answer}</p>
+          <h3 className="text-[14px] font-medium text-gray-800 mb-2">{question}</h3>
+          <p className="text-xs text-gray-600">{answer}</p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
