@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 text-xs">
       {/* Hero Section */}
-        <section className="w-full  bg-sky-600 text-white border-b border-gray-200 rounded-md mb-12">
+        <section className="w-full  bg-sky-600 text-white border-b border-gray-200  mb-12">
             <div className="text-center py-12 sm:py-16 px-4 sm:px-6">
               <div className="inline-flex items-center rounded-full bg-[#00BFFF]/10 px-3 py-1 text-xs font-medium text-[yellow] border border-[#00BFFF]/30 mb-4">
                 <Shield className="w-4 h-4 mr-2" aria-hidden="true" />
