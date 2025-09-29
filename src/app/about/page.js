@@ -8,24 +8,23 @@ import illustration from './personnes-code-qr_118813-5817 (1).avif';
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 text-xs">
-      <main className="flex-grow">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          {/* Hero Section */}
-          <section className="bg-sky-600 text-white border-b border-gray-200 rounded-md mb-12">
+      {/* Hero Section */}
+        <section className="w-full  bg-sky-600 text-white border-b border-gray-200 rounded-md mb-12">
             <div className="text-center py-12 sm:py-16 px-4 sm:px-6">
-              <div className="inline-flex items-center rounded-full bg-[#00BFFF]/10 px-3 py-1 text-xs font-medium text-[#00BFFF] border border-[#00BFFF]/30 mb-4">
+              <div className="inline-flex items-center rounded-full bg-[#00BFFF]/10 px-3 py-1 text-xs font-medium text-[yellow] border border-[#00BFFF]/30 mb-4">
                 <Shield className="w-4 h-4 mr-2" aria-hidden="true" />
                 Building Trust Worldwide
               </div>
               <h1 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                 About Lost & Found Portal
               </h1>
-              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xs sm:text-sm text-white-600 max-w-3xl mx-auto">
                 We are a community-driven platform dedicated to reuniting lost items with their owners using innovative QR sticker technology and secure, anonymous communication.
               </p>
             </div>
           </section>
-
+      <main className="flex-grow ">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Mission Section */}
           <section className="mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -78,44 +77,6 @@ export default function AboutPage() {
                 title="Innovation"
                 description="Our QR sticker technology and intelligent matching system streamline item recovery."
                 icon={<Lightbulb className="w-5 h-5 text-[#00BFFF]" aria-hidden="true" />}
-              />
-            </div>
-          </section>
-
-          {/* Team Section */}
-          <section className="mb-12">
-            <div className="text-center mb-8">
-              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
-                Meet Our Team
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto">
-                Our passionate team is committed to making a difference in your recovery journey with QR technology.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <TeamCard
-                name="Ananya Sharma"
-                role="Founder & CEO"
-                image="/team/ananya.jpg"
-                description="Ananya leads with a vision to make item recovery seamless and secure using QR stickers."
-              />
-              <TeamCard
-                name="Vikram Patel"
-                role="CTO"
-                image="/team/vikram.jpg"
-                description="Vikram drives our innovative QR sticker technology and platform development."
-              />
-              <TeamCard
-                name="Priya Menon"
-                role="Head of Community"
-                image="/team/priya.jpg"
-                description="Priya builds our global network of responsible finders using QR technology."
-              />
-              <TeamCard
-                name="Rahul Desai"
-                role="Lead Designer"
-                image="/team/rahul.jpg"
-                description="Rahul crafts intuitive and beautiful user experiences for our QR platform."
               />
             </div>
           </section>
@@ -182,13 +143,13 @@ export default function AboutPage() {
           {/* CTA Section */}
           <section className="py-12 bg-sky-600 text-white rounded-md border border-gray-200">
             <div className="text-center px-4 sm:px-6">
-              <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+              <h2 className="text-sm sm:text-base font-semibold text-yellow-600 mb-4">
                 Join Our Community
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6 max-w-3xl mx-auto">
+              <p className="text-xs sm:text-sm text-white-600 mb-6 max-w-3xl mx-auto">
                 Be part of a movement to reunite lost items with their owners. Sign up today to protect your valuables with QR stickers.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <div className="flex flex-col-2 sm:flex-row justify-center gap-3">
                 <Link
                   href="/signup"
                   aria-label="Get started with our platform for free"

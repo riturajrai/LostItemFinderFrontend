@@ -255,15 +255,15 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-8 bg-gradient-to-r from-indigo-600 to-blue-500 text-white border-t border-gray-200">
+        <section className="py-8 bg-sky-600 text-white border-t border-gray-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+            <h2 className="text-sm sm:text-base font-semibold text-yellow-500 mb-4">
               Protect Your Valuables with QR Stickers Today
             </h2>
-            <p className="text-xs sm:text-sm text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-black-600 mb-6 max-w-2xl mx-auto">
               Join thousands of users who trust our QR sticker technology to safeguard their belongings.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <div className="flex flex-col-2 sm:flex-row justify-center gap-3">
               <Link
                 href="/signup"
                 aria-label="Get started with our platform for free"

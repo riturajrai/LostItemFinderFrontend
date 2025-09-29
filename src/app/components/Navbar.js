@@ -46,7 +46,6 @@ const Navbar = () => {
       try {
         console.log(`[${new Date().toISOString()}] Navbar: Checking authentication...`);
         console.log(`[${new Date().toISOString()}] Navbar: Cookies:`, document.cookie);
-
         const response = await fetch('http://localhost:4000/api/users/verify-token', {
           method: 'GET',
           credentials: 'include',
@@ -155,19 +154,15 @@ const Navbar = () => {
     { href: '/', label: 'Home', icon: Home },
     { href: '/about', label: 'About Us', icon: Info },
     { href: '/qr-tags', label: 'Shop', icon: Tag },
-    { href: '/lost-found', label: 'Lost & Found', icon: MapPin },
-    { href: '/contact', label: 'Contact Us', icon: MessageSquare },
+    { href: '/contact-us', label: 'Contact Us', icon: MessageSquare },
     { href: '/login', label: 'Login', icon: User },
     { href: '/signup', label: 'Signup', icon: UserPlus },
   ];
 
   const privateNavItems = [
     { href: '/dashboard', label: 'Dashboard', icon: Home },
-    { href: '/my-qr-tags', label: 'My QR Tags', icon: Tag },
+    { href: '/my-qr', label: 'My QR', icon: Tag },
     { href: '/qr-tags', label: 'Shop', icon: Tag },
-    { href: '/lost-found', label: 'Lost & Found', icon: MapPin },
-    { href: '/premium-services', label: 'Premium Services', icon: DollarSign },
-    { href: '/explore-local', label: 'Explore Local', icon: MapPin },
   ];
 
   const profileItems = [
