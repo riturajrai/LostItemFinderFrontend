@@ -46,7 +46,7 @@ const Navbar = () => {
       try {
         console.log(`[${new Date().toISOString()}] Navbar: Checking authentication...`);
         console.log(`[${new Date().toISOString()}] Navbar: Cookies:`, document.cookie);
-        const response = await fetch('http://localhost:4000/api/users/verify-token', {
+        const response = await fetch('https://lostitemfinder.onrender.com/api/users/verify-token', {
           method: 'GET',
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
