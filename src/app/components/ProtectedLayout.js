@@ -13,7 +13,7 @@ const ProtectedLayout = ({ children }) => {
     const checkAuth = async () => {
       try {
         console.log('Checking authentication...');
-        const response = await fetch('http://localhost:4000/api/users/verify-token', {
+        const response = await fetch('https://lostitemfinder.onrender.com/api/users/verify-token', {
           method: 'GET',
           credentials: 'include', // Send cookies
           headers: {
