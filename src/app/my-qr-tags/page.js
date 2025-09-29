@@ -23,12 +23,14 @@ const QRGenerator = () => {
 
   // Base URL for the public contact details page
   const BASE_URL = "http://localhost:3000";
+  
+  const API_URL = 'https://lostitemfinder.onrender.com'
 
   // Fetch existing QR and contact details for the user
   useEffect(() => {
     const fetchQR = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/qr/my-qr", { withCredentials: true });
+        const res = await axios.get(`${API_URL}/api/qr/my-qr`, { withCredentials: true });
         if (res.data.success) {
           setQrUrl(res.data.qrImageUrl);
           setSerial(res.data.serialNumber);
@@ -82,7 +84,7 @@ const QRGenerator = () => {
       const imageData = canvas.toDataURL("image/png");
 
       const res = await axios.post(
-        "http://localhost:4000/api/qr/upload-qr",
+        `${API_URL}/api/qr/upload-qr`,
         { 
           image: imageData, 
           serialNumber: serial,
@@ -123,7 +125,7 @@ const QRGenerator = () => {
     setUploading(true);
     try {
       const res = await axios.put(
-        "http://localhost:4000/api/qr/update-contact",
+        `${API_URL}/api/qr/update-contact`,
         { contactDetails },
         { withCredentials: true }
       );
@@ -146,7 +148,7 @@ const QRGenerator = () => {
   // Simulate QR scan by fetching contact details via serial number
   const handleScanQR = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/qr/contact/${serial}`);
+      const res = await axios.get(`${API_URL}/api/qr/contact/${serial}`);
       if (res.data.success) {
         setScannedContact(res.data.contactDetails);
       } else {

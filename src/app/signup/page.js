@@ -10,7 +10,7 @@ import PasswordStrengthIndicator from './PasswordStrengthIndicator';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: 'https://lostitemfinder.onrender.com',
   headers: { 'Content-Type': 'application/json' },
 });
 
