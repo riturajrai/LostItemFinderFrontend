@@ -17,7 +17,7 @@ const ContactDetails = () => {
         return;
       }
       try {
-        const res = await axios.get(`http://localhost:4000/api/qr/contact/${serialNumber}`);
+        const res = await axios.get(`https://lostitemfinder.onrender.com/api/qr/contact/${serialNumber}`);
         if (res.data.success) {
           setContactDetails(res.data.contactDetails);
         } else {
